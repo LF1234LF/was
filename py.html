@@ -1,0 +1,642 @@
+<!doctype html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="bb.css">
+   <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('1.png'); /* 请替换为你的背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .glass-effect {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .navigation button {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .navigation button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+  }
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  .running-time {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .gradient-text {
+    background: linear-gradient(45deg, #6DD5FA, #FF758C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: colorCycle 5s linear infinite;
+  }
+  @keyframes colorCycle {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  
+  }
+</style>
+    </head>
+    <body>
+    <div class="glass-effect">
+  <div class="avatar">
+    <img src="icon.png" alt="头像"> <!-- 请替换为你的头像图片路径 -->
+  </div>
+<div style="overflow: auto; width: 200px; height: 100px;">       ks:灵风
+      ks:w1138waa 
+      中间可能有打错的，谅解
+1.print 打印
+2.变量
+  #名字 = 数据
+a = "这是一句话"
+print(a)因为a=这一句话所以打印。这句话
+  
+  a = 2
+  s = 1
+  c = a + s
+  print(c)                                      (前面不需要空格只是为了教学等于号与数字之间必须空格，还有加号也一样)
+3.输入框
+(1)input("请输入文字")
+(2)a = input("请输入文字")
+   prinr(a)
+4.逻辑判断
+如果   就   否则   就
+(1)if如果
+#输入密码。如果密码等于123456就执行下面的代码。需要空格，否则会报错
+a = input("请输入密码")
+if a == "123456";   
+    print("密码正确")
+#else否则的意思#后面代码不会生效
+else;
+    print("密码错误不能进入")
+
+注意。有的时候需要转换为数字，需要使用int
+5.数据类型
+(1)数据类型它可以运算
+a = 123
+print(a+1)
+输出结果为124打印a为123，给a加一打印124以此类推
+(2)字符串型
+a = 123
+b = "123"注意b要带引号
+print(b)
+打印123没有带引号。带引号是为了保存数字，不可以计算
+print(b+1)会报错
+不管引号里写的什么都会看作字符串
+(3)布偶值。真和假
+True是真
+c = True
+print(c)
+打印结果为True
+False是假
+c = False
+print(c)
+打印结果False
+
+
+a = 123
+print(a > 100)
+打印结果为True是真
+a = 123
+print(a > 200)
+打印结果为False是假
+if语句的原理
+(6)循环
+
+for a in range(0,101); 循环语句
+    print("你好")循环你好
+循环100次
+0~101刚好100
+# 实现1+2+3+4.......+100
+s = 0
+for a in range(0,101):
+    s += a
+print(s)
+打印结果为5050
+(7)函数
+多多 淘气 笑笑
+print("打开门")
+print("把多多放进去")
+print("关上门")
+# 以此类推分别把淘气笑笑放进去。可是这样太麻烦了。有一种简单的方法
+我们只需要把名字设置成某某
+print("打开门")
+print("把某某放进去")
+print("关上门")
+# 就像这样
+# 第1步首先要定义一个函数
+ #def 可以定义函数
+ 
+def 把多多放进去():
+     print("打开门")
+     print("把多多放进去")
+     print("关上门")
+     
+     return # 结束函数。直接运行是没有用的。需要手动调用
+     
+把多多放进去()# 当然也可以用最短的形式，例如
+
+def a():
+     print("打开门")
+     print("把多多放进去")
+     print("关上门")
+     
+     return
+
+a()这是运行一次的。以此类推
+a()
+a()
+成功运行三次上面的这段话。但是人名没有变。可以配合循环使用。接下来是变人名。只需要在括号里面写name然后再把多多删掉，换成"+name+"
+
+def a(name):
+     print("打开门")
+     print("把"+name+"放进去")
+     print("关上门")
+     
+     return
+     
+
+a("多多")
+a("淘气")
+a("笑笑")
+效果就出来了。打印效果为。打开门
+                           把多多放进去
+                           关上门
+                           打开门
+                           把淘气放进去
+                           关上门
+                           打开门
+                           把笑笑放进去
+                           关上门
+                           这就是pythin的函数
+                           
+(8)列表
+编程中。第1个就是第0个。所以说都是从第0开始
+# 来做个盲盒机
+# 导入随机数模块
+import random
+a = [' iPhone 14','华为max60','苹果Pro','空']
+
+print(a[random.randint(0,3)])
+(9)做一个获取网页代码的小程序
+# 导入模块
+import requests
+url = 'https//github.com'
+res = requests.get(url).text
+print(res)
+(10)做二维码
+软件推荐使用pydroid3可以安装各种模块。加q拿1971160541
+添加模块qrcode安装时如果要添加库禁用库存再点点确定就可以了
+# 安装模块
+import qrcode
+import image
+img = qrcode.make('我是快手 隐于凡')
+img.save('/storage/emulated/0/a.jpg')# 有些手机不支持
+以下是Python的基本单词
+1、print：打印/输出
+
+2、coding：编码
+
+3、syntax：语法
+
+4、error：错误
+
+5、invalid：无效
+
+6、identifier：名称/标识符
+
+7、character ：字符
+
+ 
+
+二、字符串的操作
+
+1、user：用户
+
+2、name：姓名/名称
+
+3、attribute：字段/属性
+
+4、value：值
+
+5、key：键
+
+ 
+
+三、重复/转换/替换/原始字符串
+
+1、upper：上面
+
+2、lower：下面
+
+3、capitalize：用大写字母写或印刷
+
+4、title：标题
+
+5、replace：替换
+
+6、old：旧的
+
+7、new：新的
+
+8、count：计数
+
+9、swap：互换
+
+10、case：情形
+
+11、path：路径
+
+12、new：新的\新建
+
+13、project：项目
+
+14、test：测试
+
+15、file：文件
+
+16、data：数据
+
+ 
+
+四、去除/查询/计数
+
+1、strip：去除
+
+2、index：索引
+
+3、find：查找
+
+4、count：计数
+
+5、start：开始
+
+6、end：结束
+
+7、chars：字符
+
+8、sub：附属
+
+ 
+
+五、获取输入/格式化
+
+1、input：输入
+
+2、prompt：提示
+
+3、ID：身份证
+
+4、format：格式化
+
+5、args（argument）：参数
+
+6、kwargs：关键字参数
+
+7、year：年
+
+8、month：月
+
+9、day：日
+
+ 
+
+六、元组
+
+1、tuple：元组
+
+2、max：最大
+
+3、min：最小
+
+4、iterable：可迭代
+
+5、key：关键字
+
+6、function：方法/函数
+
+7、stop：停止
+
+8、object：对象
+
+ 
+
+七、列表
+
+1、list：列表
+
+2、reverse：反向
+
+3、true：真
+
+4、false：假
+
+5、append：附加
+
+6、extend：扩展
+
+7、insert：插入
+
+8、pop：取出
+
+9、remove：移除
+
+10、del（delete）：删除
+
+11、clear：清除
+
+12、sort：排序
+
+ 
+
+八、集合
+
+1、set：集合/设置
+
+2、add：添加
+
+3、update：更新
+
+4、discard：丢弃
+
+5、intersection：相交
+
+6、union：联合
+
+7、difference：差数
+
+8、symmetric：对称
+
+9、in：在…里面
+
+10、not：不/不是
+
+11、disjoint：不相交
+
+12、subset：子集
+
+13、superset：父集/超集
+
+14、copy：复制
+
+ 
+
+九、字典
+
+1、dict：字典
+
+2、key：键/关键字
+
+3、value：值
+
+4、item：项
+
+5、mapping：映射
+
+6、seq（sequence）：序列
+
+7、from：从/来自
+
+8、get：获取
+
+9、default：默认
+
+10、none：没有
+
+11、arg：可变元素
+
+12、kwargs（keyword args）：可变关键字元素
+
+ 
+
+十、循环
+
+1、for…in…循环的使用
+
+2、while…循环的使用
+
+3、range：范围
+
+4、sep(separate)：分隔
+
+5、flush：冲刷
+
+6、step：步长
+
+7、continue：继续
+
+8、break：突破/跳出
+
+ 
+
+十一、条件/跳出与结束循环
+
+1、if：如果
+
+2、else：否则
+
+ 
+
+十二、运算符与随机数
+
+1、module：模块
+
+2、sys(system)：系统
+
+3、path：路径
+
+4、import：导入
+
+5、from：从…
+
+ 
+
+十三、定义函数与设定参数
+
+1、birthday：出生日期
+
+2、year：年份
+
+3、month：月份
+
+4、day：日期
+
+5、type：类型
+
+6、error：错误
+
+7、missing：丢失
+
+8、required：必须
+
+9、positional：位置
+
+10、unsupported：不支持
+
+ 
+
+十四、设定收集参数
+
+1、create：创建
+
+2、info：信息
+
+3、age：年龄
+
+4、height：高度
+
+5、width：宽度
+
+6、weight：重量
+
+7、splicing：拼接
+
+8、params：参数
+
+9、volume：体积
+
+11、operand：操作数
+
+ 
+
+十五、嵌套函数/作用域/闭包
+
+1、inside：内部
+
+2、outside：外部
+
+3、radius：半径
+
+4、perimeter：周长
+
+5、case：情形
+
+6、synthesis：合成
+
+7、execute：执行
+
+ 
+
+十六、递归函数
+
+1、recursion：递归
+
+2、Infinite：无穷
+
+3、maximum：最大值
+
+4、depth：深度
+
+5、exceeded：超过
+
+6、factorial：阶乘
+
+7、search：查询
+
+8、power：幂
+
+9、lower：下方
+
+10、upper：上方
+
+11、middle：中间
+
+12、assert/assertion：异常
+
+ 
+
+十七、列表推导式/lambda表达式
+
+1、square：平方
+
+2、even：偶数
+
+3、comprehension：理解
+
+4、lambda：希腊字母λ的英文名称，大名鼎鼎的游戏半条命里面的logo就是这个。
+
+ 
+
+十八、列表推导式/lambda表达式
+
+1、regular：规则
+
+2、expression： 表达式
+
+3、group：组
+
+4、match：匹配
+
+5、span：跨度
+
+6、ignore case：忽略 大小写
+
+7、multi line：多 行
+
+8、dot all：点 全部
+
+9、unicode：万国码
+
+10、verbose：累赘
+
+11、pos/position：位置 </div>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js">
+  </script>
+  <script src="https://myhkw.cn/player/js/player.js" id="myhk" key="demo" m="1">
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
