@@ -1,0 +1,1164 @@
+<!doctype html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="bb.css">
+   <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('1.png'); /* 请替换为你的背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .glass-effect {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .navigation button {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .navigation button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+  }
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  .running-time {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .gradient-text {
+    background: linear-gradient(45deg, #6DD5FA, #FF758C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: colorCycle 5s linear infinite;
+  }
+  @keyframes colorCycle {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  
+  }
+</style>
+    </head>
+    <body>
+    <div class="glass-effect">
+  <div class="avatar">
+    <img src="icon.png" alt="头像"> <!-- 请替换为你的头像图片路径 -->
+  </div>
+<div style="overflow: auto; width: 200px; height: 100px;">   BY.苏苏
+Lua 第一课 基本语法
+
+GG修改器提供给我们的Lua代码学习起来非常简单，我们开始创建第一个 Lua 脚本。
+我们将Lua脚本代码保持到一个以 lua 结尾的文件，并执行。
+如我们将如下代码存储在名为 hello.lua 的脚本文件中：
+print("Hello World！")
+使用GG修改器执行以上脚本，输出结果为："Hello World！"
+注释符:
+单行注释:
+--两个减号是单行注释:
+多行注释:
+--[[
+ 多行注释
+ 多行注释
+ --]]
+标示符
+Lua 标示符用于定义一个变量，函数获取其他用户定义的项。
+标示符以一个字母 A 到 Z 或 a 到 z 或下划线 _ 开头后加上0个或多个字母，下划线，数字（0到9）。
+Lua 不允许使用特殊字符如 @, $, 和 % 来定义标示符。 
+Lua 是一个区分大小写的脚本语言。因此在 Lua 中 W3c 与 w3c 是两个不同的标示符。
+以下列出了一些正确的标示符：
+mohd         zara      abc     move_name    a_123
+myname50     _temp     j       a23b9        retVal
+关键词
+以下列出了 Lua 的保留关键字，保留关键字不能作为常量或变量或其他自定义标示符：
+and	   break	     do	     else
+elseif	      end     	false	    for
+function	     if	      in	     local
+nil	    not     	or      	repeat
+return   	then	    true      	until      while	 	 	 
+全局变量
+在默认情况下，变量总是认为是全局的。
+全局变量不需要声明，给一个变量赋值后即创建了这个全局变量，访问一个没有初始化的全局变量也不会出错，只不过得到的结果是：nil。
+print(b)打印结果:nil 
+b=10 print(b)打印结果:10
+如果你想删除一个全局变量，只需要将变量赋值为nil。
+b = nil    print(b)打印结果:nil
+局部变量
+局部变量只需要在变量前添加local声明，局部变量会在语句块末的时候结束。
+do local a=1 print(a) end 这个时候局部变量a已经结束了，再其他地方调用将返回nil。
+print(a)这时候返回nil.
+
+
+
+BY.苏苏
+Lua第二课 数据类型
+Lua是动态类型语言，变量不要类型定义,只需要为变量赋值。 
+值可以存储在变量中，作为参数传递或结果返回。
+GG修改提供给我们的Lua数据中有6个基本类型分别为：nil、number、boolean、string、function和table。
+数据类型	描述
+nil	这个最简单，只有值nil属于该类，表示一个无效值（在条件表达式中相当于false）。
+number	表示双精度类型的实浮点数
+string	字符串由一对双引号或单引号来表示
+function	由Lua 编写的函数
+boolean 包含两个值：false和true
+table	Lua 中的表（table）其实是一个"关联数组"，数组的索引可以是数字或者是字符串。
+在 Lua 里，table 的创建是通过"构造表达式"来完成，最简单构造表达式是{}，用来创建一个空表。
+我们可以使用type函数测试给定变量或者值的类型：
+print(type("Hello world"))  打印--> string
+print(type(10.4*3))   打印--> number
+print(type(print))  打印--> function
+print(type(type))  打印--> function
+print(type(true))   打印--> boolean
+print(type(nil))   打印--> nil
+print(type(type(X)))   打印--> string
+
+nil（空）
+nil 类型表示一种没有任何有效值，它只有一个值 -- nil，例如打印一个没有赋值的变量，便会输出一个 nil 值：
+print(type(a))打印-->nil
+
+对于全局变量和 table，nil 还有一个"删除"作用，给全局变量或者 table 表里的变量赋一个 nil 值，等同于把它们删掉，执行下面代码就知：
+tab1 = { key1 = "val1", key2 = "val2", "val3" }
+for k, v in pairs(tab1) do
+    print(k .. " - " .. v)
+    end
+ tab1.key1 = nil
+ for k, v in pairs(tab1) do
+    print(k .. " - " .. v)
+    end
+    
+boolean（布尔）
+boolean 类型只有两个可选值：true（真） 和 false（假），Lua 把 false 和 nil 看作是"假"，其他的都为"真":
+print(type(true))
+print(type(false))
+print(type(nil))
+ if false or nil then
+    print("至少有一个是 true")
+    else
+    print("false 和 nil 都为 false!")
+    end
+以上代码执行结果如下:
+false 和 nil 都为 false!
+
+number（数字）
+Lua 默认只有一种 number 类型 -- double（双精度）类型，以下几种写法都被看作是 number 类型：
+print(type(2))
+print(type(2.2))
+print(type(0.2))
+print(type(2e+1))
+print(type(0.2e-1))
+print(type(7.8263692594256e-06))
+以上代码执行结果：
+number
+number
+number
+number
+number
+number
+
+string（字符串）
+字符串由一对双引号或单引号来表示。
+string1 = "this is string1"
+string2 = 'this is string2'
+也可以用 2 个方括号 "[[]]" 来表示"一块"字符串。
+str= [[this is string1and this is string2]]
+print(str)
+以下代码执行结果为：
+this is string1and this is string2
+
+在对一个数字字符串上进行算术操作时，Lua 会尝试将这个数字字符串转成一个数字:
+print("2" + 6)打印-->8.0
+print("2" + "6")打印-->8.0
+print("2 + 6")打印-->2 + 6
+print("-2e2" * "6")打印-->-1200.0
+ 
+字符串连接符使用..表示
+print("a" .. 'b')打印-->ab
+print(157 .. 428)打印-->157428
+
+table（表）
+在 Lua 里，table 的创建是通过"构造表达式"来完成，最简单构造表达式是{}，用来创建一个空表。也可以在表里添加一些数据，直接初始化表:
+-- 创建一个空的table 
+local tbl1 = {}
+ -- 直接初始表
+ local tbl2 = {"apple", "pear", "orange", "grape"}
+Lua 中的表（table）其实是一个"关联数组"，数组的索引可以是数字或者是字符串。
+a = {}
+a["key"] = "value"
+key = 10a
+[key] = 22a
+[key] = a[key] + 11
+for k, v in pairs(a) do
+    print(k .. " : " .. v)
+    end
+脚本执行结果为：
+key : value10 : 33
+不同于其他语言的数组把 0 作为数组的初始索引，在 Lua 里表的默认初始索引一般以 1 开始。
+local tbl = {"apple", "pear", "orange", "grape"}
+for key, val in pairs(tbl) do
+    print("Key", key)
+    end
+脚本执行结果为：
+Key	1Key	2Key	3Key	4
+table 不会固定长度大小，有新数据添加时 table 长度会自动增长，没初始的 table 都是 nil。
+a3 = {}
+for i = 1, 10 do
+    a3[i] = i
+    end
+    a3["key"] = "val"
+    print(a3["key"])
+    print(a3["none"])
+脚本执行结果为：valnil
+function（函数）
+在 Lua 中，函数是被看作是"第一类值"，函数可以存在变量里:
+function factorial1(n)
+    if n == 0 then
+        return 1
+    else
+        return n * factorial1(n - 1)
+    end
+    end
+    print(factorial1(5))
+    factorial2 = factorial1
+    print(factorial2(5))
+脚本执行结果为120 120
+function 可以以匿名函数的方式通过参数传递:
+function anonymous(tab, fun)
+    for k, v in pairs(tab) do
+        print(fun(k, v))
+    end
+    end
+    tab = { key1 = "val1", key2 = "val2" }
+    anonymous(tab, function(key, val)
+    return key .. " = " .. val
+    end)
+脚本执行结果为：
+key1 = val1
+key2 = val2
+ 
+ BY.苏苏
+Lua第二课 数据类型
+Lua是动态类型语言，变量不要类型定义,只需要为变量赋值。 
+值可以存储在变量中，作为参数传递或结果返回。
+GG修改提供给我们的Lua数据中有6个基本类型分别为：nil、number、boolean、string、function和table。
+数据类型	描述
+nil	这个最简单，只有值nil属于该类，表示一个无效值（在条件表达式中相当于false）。
+number	表示双精度类型的实浮点数
+string	字符串由一对双引号或单引号来表示
+function	由Lua 编写的函数
+boolean 包含两个值：false和true
+table	Lua 中的表（table）其实是一个"关联数组"，数组的索引可以是数字或者是字符串。
+在 Lua 里，table 的创建是通过"构造表达式"来完成，最简单构造表达式是{}，用来创建一个空表。
+我们可以使用type函数测试给定变量或者值的类型：
+print(type("Hello world"))  打印--> string
+print(type(10.4*3))   打印--> number
+print(type(print))  打印--> function
+print(type(type))  打印--> function
+print(type(true))   打印--> boolean
+print(type(nil))   打印--> nil
+print(type(type(X)))   打印--> string
+
+nil（空）
+nil 类型表示一种没有任何有效值，它只有一个值 -- nil，例如打印一个没有赋值的变量，便会输出一个 nil 值：
+print(type(a))打印-->nil
+
+对于全局变量和 table，nil 还有一个"删除"作用，给全局变量或者 table 表里的变量赋一个 nil 值，等同于把它们删掉，执行下面代码就知：
+tab1 = { key1 = "val1", key2 = "val2", "val3" }
+for k, v in pairs(tab1) do
+    print(k .. " - " .. v)
+    end
+ tab1.key1 = nil
+ for k, v in pairs(tab1) do
+    print(k .. " - " .. v)
+    end
+    
+boolean（布尔）
+boolean 类型只有两个可选值：true（真） 和 false（假），Lua 把 false 和 nil 看作是"假"，其他的都为"真":
+print(type(true))
+print(type(false))
+print(type(nil))
+ if false or nil then
+    print("至少有一个是 true")
+    else
+    print("false 和 nil 都为 false!")
+    end
+以上代码执行结果如下:
+false 和 nil 都为 false!
+
+number（数字）
+Lua 默认只有一种 number 类型 -- double（双精度）类型，以下几种写法都被看作是 number 类型：
+print(type(2))
+print(type(2.2))
+print(type(0.2))
+print(type(2e+1))
+print(type(0.2e-1))
+print(type(7.8263692594256e-06))
+以上代码执行结果：
+number
+number
+number
+number
+number
+number
+
+string（字符串）
+字符串由一对双引号或单引号来表示。
+string1 = "this is string1"
+string2 = 'this is string2'
+也可以用 2 个方括号 "[[]]" 来表示"一块"字符串。
+str= [[this is string1and this is string2]]
+print(str)
+以下代码执行结果为：
+this is string1and this is string2
+
+在对一个数字字符串上进行算术操作时，Lua 会尝试将这个数字字符串转成一个数字:
+print("2" + 6)打印-->8.0
+print("2" + "6")打印-->8.0
+print("2 + 6")打印-->2 + 6
+print("-2e2" * "6")打印-->-1200.0
+ 
+字符串连接符使用..表示
+print("a" .. 'b')打印-->ab
+print(157 .. 428)打印-->157428
+
+table（表）
+在 Lua 里，table 的创建是通过"构造表达式"来完成，最简单构造表达式是{}，用来创建一个空表。也可以在表里添加一些数据，直接初始化表:
+-- 创建一个空的table 
+local tbl1 = {}
+ -- 直接初始表
+ local tbl2 = {"apple", "pear", "orange", "grape"}
+Lua 中的表（table）其实是一个"关联数组"，数组的索引可以是数字或者是字符串。
+a = {}
+a["key"] = "value"
+key = 10a
+[key] = 22a
+[key] = a[key] + 11
+for k, v in pairs(a) do
+    print(k .. " : " .. v)
+    end
+脚本执行结果为：
+key : value10 : 33
+不同于其他语言的数组把 0 作为数组的初始索引，在 Lua 里表的默认初始索引一般以 1 开始。
+local tbl = {"apple", "pear", "orange", "grape"}
+for key, val in pairs(tbl) do
+    print("Key", key)
+    end
+脚本执行结果为：
+Key	1Key	2Key	3Key	4
+table 不会固定长度大小，有新数据添加时 table 长度会自动增长，没初始的 table 都是 nil。
+a3 = {}
+for i = 1, 10 do
+    a3[i] = i
+    end
+    a3["key"] = "val"
+    print(a3["key"])
+    print(a3["none"])
+脚本执行结果为：valnil
+function（函数）
+在 Lua 中，函数是被看作是"第一类值"，函数可以存在变量里:
+function factorial1(n)
+    if n == 0 then
+        return 1
+    else
+        return n * factorial1(n - 1)
+    end
+    end
+    print(factorial1(5))
+    factorial2 = factorial1
+    print(factorial2(5))
+脚本执行结果为120 120
+function 可以以匿名函数的方式通过参数传递:
+function anonymous(tab, fun)
+    for k, v in pairs(tab) do
+        print(fun(k, v))
+    end
+    end
+    tab = { key1 = "val1", key2 = "val2" }
+    anonymous(tab, function(key, val)
+    return key .. " = " .. val
+    end)
+脚本执行结果为：
+key1 = val1
+key2 = val2
+ 
+
+BY.苏苏
+Lua第三课 变量
+Lua 变量在使用前，必须在代码中进行声明，即创建该变量。
+Lua 变量有三种类型：全局变量、局部变量、表中的域。
+Lua 中的变量全是全局变量，那怕是语句块或是函数里，除非用 local 显式声明为局部变量。
+局部变量的作用域为从声明位置开始到所在语句块结束。
+变量的默认值均为 nil
+a = 5               -- 全局变量
+local b = 5         -- 局部变量
+
+function joke()
+    c = 5           -- 全局变量
+    local d = 6     -- 局部变量
+end
+
+joke()
+print(c,d)         打印 -->c为5        d为nil
+
+do 
+    local a = 6     -- 局部变量
+    b = 6           -- 全局变量
+    print(a,b);    打印 --> 6和6
+end
+
+print(a,b)      打印--> 5 6
+赋值语句
+赋值是改变一个变量的值和改变表域的最基本的方法。
+a = "hello" .. "world"
+Lua可以对多个变量同时赋值，变量列表和值列表的各个元素用逗号分开，赋值语句右边的值会依次赋给左边的变量。
+a, b = 10, 2*x      
+输出结果:a=10; b=2*x
+当变量个数和值的个数不一致时，Lua会一直以变量个数为基础采取以下策略：
+a. 变量个数 > 值的个数             按变量个数补足nil
+b. 变量个数 < 值的个数             多余的值会被忽略
+例如：
+a, b, c = 0, 1
+print(a,b,c)            打印 --> 0   1   nil
+ 
+a, b = a+1, b+1, b+2     
+print(a,b)               打印--> 1   2
+ 
+a, b, c = 0
+print(a,b,c)            打印 --> 0   nil   nil
+如果要对多个变量赋值必须依次对每个变量赋值
+a, b, c = 0, 0, 0
+print(a,b,c)             打印--> 0   0   0
+多值赋值经常用来交换变量，或将函数调用返回给变量：
+a, b = f()
+f()返回两个值，第一个赋给a，第二个赋给b。
+应该尽可能的使用局部变量，有两个好处：
+1. 避免命名冲突。
+2. 访问局部变量的速度比全局变量更快。
+索引
+对 table 的索引使用方括号 []
+Lua 也提供了 . 操作
+t[i]
+t.i                 -- 当索引为字符串类型时的一种简化写法
+采用索引访问本质上是一个类似这样的函数调用
+例如：
+site = {}
+site["key"] = "www"
+print(site["key"])打印-->www
+print(site.key)打印-->www
+
+
+BY.苏苏
+Lua第四课 循环
+Lua 循环
+很多情况下我们需要做一些有规律性的重复操作，因此在程序中就需要重复执行某些语句。
+一组被重复执行的语句称之为循环体，能否继续重复，决定循环的终止条件。
+循环结构是在一定条件下反复执行某段程序的流程结构，被反复执行的程序被称为循环体。
+循环语句是由循环体及循环的终止条件两部分组成的。
+Lua 语言提供了以下几种循环处理方式：
+while 循环	在条件为 true 时，让程序重复地执行某些语句，执行语句前会先检查条件是否为 true。
+for 循环	重复执行指定语句，重复次数可在 for 语句中控制。
+repeat...until	重复执行循环，直到 指定的条件为真时为止
+循环嵌套	可以在循环内嵌套一个或多个循环语句（while、for、do..while）
+循环控制语句
+循环控制语句用于控制程序的流程， 以实现程序的各种结构方式。
+Lua 支持以下循环控制语句：
+break 语句	退出当前循环或语句，并开始脚本执行紧接着的语句。
+while循环
+在循环体中如果条件永远为 true 循环语句就会永远执行下去，以下以 while 循环为例：
+while( true )do
+   print("循环将永远执行下去")
+   end
+控制结构的条件表达式结果可以是任何值，Lua认为false和nil为假，true和非nil为真。
+要注意的是Lua中 0 为 true：
+if(0)then
+    print("0 为 true")
+    end
+以上代码输出结果为：0 为 true
+ for循环
+ for循环的格式为:循环初始条件，循环结束条件do代码块
+ for a=1,10 do
+ print(a)
+ end
+ 上面结果输出1 2 3 4 5 6 7 8 9 10
+ 
+ 
+ 
+ BY.苏苏
+Lua第五课 IF判断
+Lua 的条件判断代码是if,在条件为 true 时执行指定程序代码，在条件为 false 时执行其他指定代码
+Lua控制条件表达式结果可以是任何值，Lua认为false和nil为假，true和非nil为真。
+例子：
+if(0)then
+    print("0 为 true执行代码")
+    end
+以上代码输出结果为：0 为 true执行代码
+
+a="1"
+if a=="1" then
+prinr("添加为真执行代码")
+else
+prinr("添加为加执行代码")
+end
+以上代码输出结果为：添加为真执行代码
+
+Lua多条件判断
+Lua多条件判断用if elseif来表示
+例子:
+a="1"
+if a=="1" then
+print("a等于1")
+elseif a=="2" then
+print("a等于2")
+elseif a=="3" then
+print("a等于3")
+else
+print("a不等于以上所有")
+end
+以上代码输出结果为：a等于1
+
+if 嵌套语句	
+你可以在if 或 else if中使用一个或多个 if 或 else if 语句 。
+ 例子:
+ a=1
+ b=1
+ if a==1 then
+if b==1 then
+ print("a等于1时b等于1")
+ else
+  print("a等于1时b不等于1")
+end
+else
+ if b==1 then
+ print("a不等于1时b等于1")
+ else
+  print("a不等于1时b不等于1")
+end
+end
+以上代码输出结果为: a等于1时b等于1
+
+
+BY.苏苏
+Lua第六课 函数
+Lua中，函数是对语句和表达式进行抽象的主要方法，既可以用来处理一些特殊的工作，也可以用来计算一些值。
+Lua 提供了许多的内建函数，你可以很方便的在程序中调用它们，如print()函数可以将传入的参数打印在控制台上。
+Lua 函数主要有两种用途：
+1.完成指定的任务，这种情况下函数作为调用语句使用；
+2.计算并返回值，这种情况下函数作为赋值语句的表达式使用。
+
+实例
+以下实例定义了函数 max()，参数为 num1, num2，用于比较两值的大小，并返回最大值：
+function max(num1, num2)
+
+   if (num1 > num2) then
+      result = num1;
+   else
+      result = num2;
+   end
+   return result; 
+   end
+   print("两值比较最大值为 ",max(10,4))
+   print("两值比较最大值为 ",max(5,6))
+以上代码执行结果为：
+两值比较最大值为 	10
+两值比较最大值为 	6
+
+Lua 中我们可以将函数作为参数传递给函数，如下实例：
+   a = function(param)
+   print("这是打印函数 ",param)
+   end
+  a("1")
+  print(a) 
+以上代码执行结果为：
+这是打印函数  	1
+function: @/storage/emulated/0/k.lua:1-3  --函数包含的行数
+
+多返回值
+Lua函数中，在return后列出要返回的值得列表即可返回多值，如：
+function maximum (a)
+    local mi = 1             -- 最大值索引
+    local m = a[mi]          -- 最大值
+    for i,val in ipairs(a) do
+       if val > m then
+           mi = i
+           m = val       
+    end
+    end
+    return m, mi
+    end
+    print(maximum({8,10,23,12,5}))
+以上代码执行结果为：
+23	3
+
+局部函数
+局部函数是可选函数是全局函数还是局部函数，未设置该参数默认为全局函数，如果你需要设置函数为局部函数需要使用关键字local。
+
+函数返回值，Lua语言函数可以返回多个值，每个值以逗号隔开。
+
+
+ BY.苏苏
+Lua第七课 运算符
+Lua 运算符是一个特殊的符号，用于告诉解释器执行特定的数学或逻辑运算。
+Lua提供了以下几种运算符类型：
+算术运算符
+关系运算符
+逻辑运算符
+其他运算符
+
+算术运算符
+下表列出了 Lua 语言中的常用算术运算符，设定 A 的值为10，B 的值为 20：
++	加法	  A + B       输出结果 30
+-	减法	   A - B         输出结果 -10
+*	乘法	  A * B         输出结果 200
+/	除法	  B / A         输出结果 2
+%	取余	 B % A       输出结果 0
+^	乘幂	   A^2          输出结果 100
+-	负号	   -A              输出结果 -10
+
+实例
+我们可以通过以下实例来更加透彻的理解算术运算符的应用：
+a = 21    b = 10      c = a + b
+print(" c 的值为 ", c )
+c = a - b
+print(" c 的值为 ", c )
+c = a * b
+print(" c 的值为 ", c )
+c = a / b
+print(" c 的值为 ", c )
+c = a % b
+print(" c 的值为 ", c )
+c = a^2
+print(" c 的值为 ", c )
+c = -a
+print(" c 的值为 ", c )
+以上程序执行结果为：
+c 的值为  	31
+ c 的值为  	11
+ c 的值为  	210
+ c 的值为  	2
+ c 的值为  	1
+ c 的值为  	441
+ c 的值为  	-21
+
+关系运算符
+下表列出了 Lua 语言中的常用关系运算符，设定 A 的值为10，B 的值为 20：
+==	等于，检测两个值是否相等，相等返回 true，否则返回 false  	(A == B) 为 false。
+~=	不等于，检测两个值是否相等，相等返回 false，否则返回 true   	(A ~= B) 为 true。
+>	大于，如果左边的值大于右边的值，返回 true，否则返回 false	    (A > B) 为 false。
+<	小于，如果左边的值大于右边的值，返回 false，否则返回 true	   (A < B) 为 true。
+>=	大于等于，如果左边的值大于等于右边的值，返回 true，否则返回 false	     (A >= B) 返回 false。
+<=	小于等于， 如果左边的值小于等于右边的值，返回 true，否则返回 false    	(A <= B) 返回 true。
+
+实例
+a = 21   b = 10
+if( a == b )then
+   print("Line 1 - a 等于 b" )
+   else
+   print("Line 1 - a 不等于 b" )
+   end
+   if( a ~= b )then
+   print("Line 2 - a 不等于 b" )
+   else
+   print("Line 2 - a 等于 b" )
+   end
+   if ( a < b )then
+   print("Line 3 - a 小于 b" )
+   else
+   print("Line 3 - a 大于等于 b" )
+   end
+   if ( a > b ) then
+   print("Line 4 - a 大于 b" )
+   else
+   print("Line 5 - a 小于等于 b" )
+   end
+   -- 修改 a 和 b 的值
+   a = 5    b = 20
+   if ( a <= b ) then
+   print("Line 5 - a 小于等于  b" )
+   end
+   if ( b >= a ) then
+   print("Line 6 - b 大于等于 a" )
+   end
+   
+以上程序执行结果为：
+Line 1 - a 不等于 b
+Line 2 - a 不等于 b
+Line 3 - a 大于等于 b
+Line 4 - a 大于 b
+Line 5 - a 小于等于  b
+Line 6 - b 大于等于 a
+
+逻辑运算符
+下表列出了 Lua 语言中的常用逻辑运算符，设定 A 的值为 true，B 的值为 false：
+and	逻辑与操作符。 若 A 为 false，则返回 A，否则返回 B。	(A and B) 为 false。
+or	逻辑或操作符。 若 A 为 true，则返回 A，否则返回 B。	(A or B) 为 true。
+not	逻辑非操作符。与逻辑运算结果相反，如果条件为 true，逻辑非为 false。	not(A and B) 为 true。
+
+实例
+   a = true   b = true
+   if ( a and b )then
+   print("a and b - 条件为 true" )
+   end
+   if ( a or b )then
+   print("a or b - 条件为 true" )
+   end
+   print("---------分割线---------" )
+   -- 修改 a 和 b 的值
+   a = false   b = true
+   if ( a and b )then
+   print("a and b - 条件为 true" )
+   else
+   print("a and b - 条件为 false" )
+   end
+   if ( not( a and b) )then
+   print("not( a and b) - 条件为 true" )
+   else
+   print("not( a and b) - 条件为 false" )
+   end
+以上程序执行结果为：
+a and b - 条件为 true
+a or b - 条件为 true
+---------分割线---------
+a and b - 条件为 false
+not( a and b) - 条件为 true
+
+其他运算符
+下表列出了 Lua 语言中的连接运算符与计算表或字符串长度的运算符：
+..	连接两个字符串	a..b ，其中 a 为 "Hello " ， b 为 "World", 输出结果为 "Hello World"。
+实例
+a = "Hello "b = "World"
+print("连接字符串 a 和 b ", a..b )
+以上程序执行结果为：
+连接字符串 a 和 b 	Hello World
+
+
+
+
+
+BY.苏苏
+Lua第八课 字符串
+Lua 字符串或串(String)是由数字、字母、下划线组成的一串字符。
+Lua 语言中字符串可以使用以下三种方式来表示：
+单引号间的一串字符
+双引号间的一串字符
+[[和]]间的一串字符
+
+以上三种方式的字符串实例如下：
+string1 = "Lua"
+print("\"字符串 1 是\"",string1)
+string2 = 'lua'
+print("字符串 2 是",string2)
+string3 = [["Lua 教程"]]
+print("字符串 3 是",string3)
+以上代码执行输出结果为：
+"字符串 1 是" 	Lua
+字符串 2 是 	lua
+字符串 3 是 	"Lua 教程"
+转义字符用于表示不能直接显示的字符，如在字符串转换双引号可以使用 "\""。
+所有的转义字符和所对应的意义：
+\a   响铃(BEL)
+\b   退格(BS) ，将当前位置移到前一列
+\n   换行(LF) ，将当前位置移到下一行开头
+\r    回车(CR) ，将当前位置移到本行开头
+\t    水平制表(HT) （跳到下一个TAB位置）
+\v   垂直制表(VT)
+\\   代表一个反斜线字符''\'
+\'    代表一个单引号（撇号）字符
+\"    代表一个双引号字符
+如果我们要表示转义符号需要加上[[]]例如:[[\]]
+
+字符串操作
+Lua 提供了很多的方法来支持字符串的操作：
+
+string.byte(s [, i [, j]])
+
+string.byte是用来把字符转换成ascii数字，s为目标字符串，i为索引开始位置(从1开始)，j为索引结束位置
+string.char(...)
+
+string.char是把ascii数值转换成字符
+例子
+
+--默认为第1个返回a的ascii值
+local r = string.byte('abcdefg')    --97
+
+--从索引2(b)到索引4(d)也就是分别返回bcd的ascii值
+local r1,r2,r3 = string.byte('abcdefg',2,4)    --98,99,100
+
+--返回98所对应的字符
+local r = string.char(98)    --a
+
+--返回98,,99,100对应的字符并连在一起返回
+local r = string.char(98,99,100)    --abc
+
+
+
+string.sub (s, i [, j])
+
+截取字符串(字符串分割，字符串截取)，i为起始索引，可选参数j为结束索引(包含)，都可以为负数，第一个字符索引为1，最后一个字符为-1
+例子
+
+local res,s
+s = 'www.freecls.com'
+res = string.sub(s,5)     --freecls.com
+res = string.sub(s,5,-1)  --freecls.com
+
+--截取后3位
+res = string.sub(s,-3)    --com
+
+--截取前3位
+res = string.sub(s,1,3)   --www
+
+
+
+
+string.dump(function)
+
+把函数序列化成字符串来保存那么下次要使用的时候直接用loadstring或loadfile就可以还原函数
+例子
+
+function say()
+    print('hello')
+end
+
+local f_str = string.dump(say)
+print(f_str)    --uaQ
+
+--复原函数
+local func = loadstring(f_str)
+func()
+
+--如果我们把f_str保存到了文件tmp.txt则可以用loadfile('tmp.txt')来还原函数
+
+
+string.find (s, pattern [, init [, plain]])
+
+字符串查找函数找不到返回nil，找到了返回开始位置和结束位置，init为从哪里开始默认为1，plain默认为false表示利用模式匹配，如果设为true则表示纯文本匹配(也就是关闭正则匹配)
+例子
+
+local str = 'i love programming,11,22,%d+aa'
+local s = string.find(str,'222')    --nil
+s = string.find(str,'pro')  --8
+s = string.find(str,",%d+")    --19(匹配到了,11)
+s = string.find(str,",%d+",1,true)    --25(由于关闭了模式匹配,所以匹配到了,%d+)
+
+
+string.match (s, pattern [, init])
+
+它跟string.find差不多，只不过能把捕获匹配到的结果并返回
+例子
+
+local s,res,res1,res2
+s = 'http://www.freecls.com'
+
+--由于没有捕获，返回全部匹配
+--结果：http://www.freecls.com
+res = string.match(s,'http://%a+\.%a+\.com')
+
+--如果有捕获，则分别返回捕获结果
+--结果：www    freecls
+res1,res2 = string.match(s,'http://(%a+)\.(%a+)\.com')
+
+
+string.gsub (s, pattern, repl [, n])
+
+用来做字符串替换，可选参数n代表替换多少次默认全部替换，返回替换后的字符串
+例子
+
+local s,res,res1,res2
+s = 'http://www.freecls.com'
+
+--结果：http://test.freecls.com
+res = string.gsub(s,'www','test')
+
+--捕获替换
+--结果：test.freecls.abc
+res = string.gsub(s,'^http://%w+\.(%w+)\.com$','test.%1.abc')
+
+--w替换成t，但是只替换2次
+--结果：http://ttw.freecls.com
+res = string.gsub(s,'w','t',2)
+
+
+string.gmatch (s, pattern)
+
+迭代匹配
+例子
+
+local s = 'www.freecls.com'
+words = {}
+for w in string.gmatch(s, "%a+") do
+    words[#words + 1] = w
+end
+--words最终结果为
+--{'www','freecls','com'}
+
+
+string.format (formatstring, ···)
+字符串格式化类型c语言的sprintf不说废话以例子来讲解
+
+local s = string.format('%d%s',123,'freecls')   --123freecls
+
+s = string.format('%0.2f',1.234343)     --1.23(保留2位)
+
+--转成16进制，%X为大写的16进制
+local s = string.format('%X',140)       --8C
+local s = string.format('%x',140)       --8c
+local s = string.format('%04x',140)     --008c
+
+
+string.len(s)
+
+返回字符串长度=#s
+string.rep(s,n)
+
+字符串重复n次并拼接返回
+string.lower(s)
+
+转小写
+string.upper(s)
+
+转大写
+string.reverse(s)
+
+反转字符串
+
+BY.苏苏
+Lua 第九课table(表)
+Lua table(表)
+table 是 Lua 的一种数据结构用来帮助我们创建不同的数据类型，如：数字、字典等。
+Lua table 使用关联型数组，你可以用任意类型的值来作数组的索引，但这个值不能是 nil。
+Lua table 是不固定大小的，你可以根据自己需要进行扩容。
+table(表)的构造
+构造器是创建和初始化表的表达式。
+表是Lua特有的功能强大的东西。
+最简单的构造函数是{}，用来创建一个空表。
+可以直接初始化数组:
+-- 初始化表
+mytable = {}
+-- 指定值
+mytable[1]= "Lua"
+-- 移除引用
+mytable = nil
+-- lua 垃圾回收会释放内存
+
+当我们为 table a 并设置元素，然后将 a 赋值给 b，则 a 与 b 都指向同一个内存。如果 a 设置为 nil ，则 b 同样能访问 table 的元素。如果没有指定的变量指向a，Lua的垃圾回收机制会清理相对应的内存。
+以下实例演示了以上的描述情况：
+-- 简单的 table
+mytable = {}
+print("mytable 的类型是 ",type(mytable))
+mytable[1]= "Lua"
+mytable["wow"] = "修改前"
+print("mytable 索引为 1 的元素是 ", mytable[1])
+print("mytable 索引为 wow 的元素是 ", mytable["wow"])
+-- alternatetable和mytable的是指同一个 table
+alternatetable = mytableprint("alternatetable 索引为 1 的元素是 ", alternatetable[1])
+print("mytable 索引为 wow 的元素是 ", alternatetable["wow"])
+alternatetable["wow"] = "修改后"
+print("mytable 索引为 wow 的元素是 ", mytable["wow"])
+-- 释放变量
+alternatetable = nil
+print("alternatetable 是 ", alternatetable)
+-- mytable 仍然可以访问
+print("mytable 索引为 wow 的元素是 ", mytable["wow"])
+mytable = nil
+print("mytable 是 ", mytable)
+以上代码执行结果为：
+mytable 的类型是  	table
+mytable 索引为 1 的元素是  	Lua
+mytable 索引为 wow 的元素是  	修改前
+alternatetable 索引为 1 的元素是  	Lua
+mytable 索引为 wow 的元素是  	修改前
+mytable 索引为 wow 的元素是  	修改后
+alternatetable 是  	nil
+mytable 索引为 wow 的元素是  	修改后
+mytable 是  	nil
+
+Table 操作
+以下列出了 Table 操作常用的方法：
+table.insert (table, [pos,] value):
+在table的数组部分指定位置(pos)插入值为value的一个元素. pos参数可选, 默认为数组部分末尾.
+
+table.remove (table [, pos])
+返回table数组部分位于pos位置的元素. 其后的元素会被前移. pos参数可选, 默认为table长度, 即从最后一个元素删起。
+
+table.sort (table [, comp])
+对给定的table进行升序排序。
+
+以下实例演示了 table 的插入和移除操作:
+fruits = {"banana","orange","apple"}
+-- 在末尾插入
+table.insert(fruits,"mango")
+print("索引为 4 的元素为 ",fruits[4])
+-- 在索引为 2 的键处插入
+table.insert(fruits,2,"grapes")
+print("索引为 2 的元素为 ",fruits[2])
+print("最后一个元素为 ",fruits[5])
+table.remove(fruits)
+print("移除后最后一个元素为 ",fruits[5])
+执行以上代码输出结果为：
+脚本已结束：:
+索引为 4 的元素为  	mango
+索引为 2 的元素为  	grapes
+最后一个元素为  	mango
+移除后最后一个元素为  	nil
+
+Table 排序
+以下实例演示了 sort() 方法的使用，用于对 Table 进行排序：
+fruits = {"banana","orange","apple","grapes"}
+print("排序前")
+for k,v in ipairs(fruits) do
+	print(k,v)
+	end
+	table.sort(fruits)
+	print("排序后")
+	for k,v in ipairs(fruits) do
+	print(k,v)
+	end
+执行以上代码输出结果为：
+脚本已结束：:
+排序前
+1 	banana
+2 	orange
+3 	apple
+4 	grapes
+排序后
+1 	apple
+2 	banana
+3 	grapes
+4 	orange
+
+Table 最大值
+以下实例演示了如何获取 table 中的最大值：
+function table_maxn(t)
+    local mn = 0
+    for k, v in pairs(t) do
+        if mn < k then
+            mn = k        end
+    end
+    return mn
+    end
+    tbl = {[1] = "a", [2] = "b", [3] = "c", [26] = "z"}
+    print("tbl 最大值 ", table_maxn(tbl))
+执行以上代码输出结果为：
+tbl 最大值  	26
+
+BY.苏苏
+Lua 第十课文件 I/O
+Lua I/O 库用于读取和处理文件
+
+打开文件操作语句如下：
+file = io.open (filename [, mode])
+mode 的值有：
+r	  以只读方式打开文件，该文件必须存在。
+w  	打开只写文件，若文件存在则文件长度清为0，即该文件内容会消失。若文件不存在则建立该文件。
+a	  以附加的方式打开只写文件。若文件不存在，则会建立该文件，如果文件存在，写入的数据会被加到文件尾，即文件原先的内容会被保留。（EOF符保留）
+r+	  以可读写方式打开文件，该文件必须存在。
+w+	  打开可读写文件，若文件存在则文件长度清为零，即该文件内容会消失。若文件不存在则建立该文件。
+a+	  与a类似，但此文件可读可写
+b	  二进制模式，如果文件是二进制文件，可以加上b
++	  号表示对文件既可以读也可以写
+
+file = io.open("/storage/emulated/0/test.lua", "r")
+-- 设置默认输入文件为 test.lua
+io.input(file)
+-- 输出文件第一行
+print(io.read("*l"))
+-- 关闭打开的文件
+io.close(file)
+-- 以附加的方式打开只写文件
+file = io.open("/storage/emulated/0/test.lua", "a")
+-- 设置默认输出文件为 test.lua
+io.output(file)
+-- 在文件最后一行添加 Lua 注释
+io.write("--  test.lua 文件末尾注释")
+-- 关闭打开的文件
+io.close(file)
+
+执行以上代码，你会发现，输出了 test.ua 文件的第一行信息，并在该文件最后一行添加了 lua 的注释。
+
+在以上实例中我们使用了 io."x" 方法，其中 io.read() 中的参数可以是下表中的一个：
+"*n"	  读取一个数字并返回它。例：file.read("*n")
+"*a"	  从当前位置读取整个文件。例：file.read("*a")
+"*l"  （默认）	读取下一行，在文件尾 (EOF) 处返回 nil。例：file.read("*l")
+
+BY.苏苏
+Lua第十一课 调试(Debug)
+Lua 中 debug 库包含以下函数：
+sethook ([thread,] hook, mask [, count]):
+
+debug():
+进入一个用户交互模式，运行用户输入的每个字符串。 使用简单的命令以及其它调试设置，用户可以检阅全局变量和局部变量， 改变变量的值，计算一些表达式，等等。 
+gethook(optional thread):
+返回三个表示线程钩子设置的值： 当前钩子函数，当前钩子掩码，当前钩子计数
+getinfo ([thread,] f [, what]):
+返回关于一个函数信息的表。 你可以直接提供该函数， 也可以用一个数字 f 表示该函数。 数字 f 表示运行在指定线程的调用栈对应层次上的函数： 0 层表示当前函数（getinfo 自身）； 1 层表示调用 getinfo 的函数 （除非是尾调用，这种情况不计入栈）；等等。 如果 f 是一个比活动函数数量还大的数字， getinfo 返回 nil。
+debug.getlocal ([thread,] f, local):
+此函数返回在栈的 f 层处函数的索引为 local 的局部变量 的名字和值。 这个函数不仅用于访问显式定义的局部变量，也包括形参、临时变量等。
+	
+Lua 的debug.getinfo 函数的第二个参数，用来指定希望获取哪些信息。
+通过这个参数，函数就不会浪费时间去收集用户不需要的数据。
+这个函数的第二个参数是一个字符串，其中每个字母代表一组字段，这些字母是：
+
+'n'	选择 name 和 namewaht
+‘f'	选择 func
+’S'	选择 source, short_src, what, linedefined 和 lastlinedefined
+'l'	选择 currentline
+'L'	选择 activelines
+'u'	选择 nups
+ 
+ 
+         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js">
+  </script>
+  <script src="https://myhkw.cn/player/js/player.js" id="myhk" key="demo" m="1">
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
