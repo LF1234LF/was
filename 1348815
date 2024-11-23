@@ -1,0 +1,1096 @@
+<!doctype html>
+<html>
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="bb.css">
+   <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('1.png'); /* 请替换为你的背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .glass-effect {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .navigation button {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .navigation button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+  }
+  h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  .running-time {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .gradient-text {
+    background: linear-gradient(45deg, #6DD5FA, #FF758C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: colorCycle 5s linear infinite;
+  }
+  @keyframes colorCycle {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  
+  }
+</style>
+    </head>
+    <body>
+    <div class="glass-effect">
+  <div class="avatar">
+    <img src="icon.png" alt="头像"> <!-- 请替换为你的头像图片路径 -->
+  </div>
+<div style="overflow: auto; width: 200px; height: 100px;">       ks:灵风
+    { -- table(595c72)
+	['_G'] = { -- table(595c72)
+		-- *** RECURSION ***
+	},
+	['_VERSION'] = 'Lua 5.3 (with Luaj 3.0.1)',
+	['assert'] = function: assert,
+	['assert2'] = function: assert2,
+	['b'] = true,
+	['bit32'] = { -- table(b16cc58)
+		-- *** RECURSION ***
+	},
+	['collectgarbage'] = function: collectgarbage,
+	['debug'] = { -- table(e439540)
+		['debug'] = function: debug.debug,
+		['gethook'] = function: debug.gethook,
+		['getinfo'] = function: debug.getinfo,
+		['getlocal'] = function: debug.getlocal,
+		['getmetatable'] = function: debug.getmetatable,
+		['getregistry'] = function: debug.getregistry,
+		['getupvalue'] = function: debug.getupvalue,
+		['getuservalue'] = nil,
+		['sethook'] = function: debug.sethook,
+		['setlocal'] = function: debug.setlocal,
+		['setmetatable'] = function: debug.setmetatable,
+		['setupvalue'] = function: debug.setupvalue,
+		['setuservalue'] = nil,
+		['traceback'] = function: debug.traceback,
+		['upvalueid'] = function: debug.upvalueid,
+		['upvaluejoin'] = function: debug.upvaluejoin,
+	},
+	['dofile'] = function: dofile,
+	['error'] = function: error,
+	['getmetatable'] = function: getmetatable,
+	['gg'] = { -- table(9c03c79)
+		['ANDROID_SDK_INT'] = 31,
+		['ASM_ARM'] = 4,
+		['ASM_ARM64'] = 6,
+		['ASM_THUMB'] = 5,
+		['BUILD'] = 16142,
+		['CACHE_DIR'] = '/data/user/0/com.tgcpnnz/cache',
+		['DUMP_SKIP_SYSTEM_LIBS'] = 1,
+		['EXT_CACHE_DIR'] = '/storage/emulated/0/Android/data/com.tgcpnnz/cache',
+		['EXT_FILES_DIR'] = '/storage/emulated/0/Android/data/com.tgcpnnz/files',
+		['EXT_STORAGE'] = '/storage/emulated/0',
+		['FILES_DIR'] = '/data/user/0/com.tgcpnnz/files',
+		['FREEZE_IN_RANGE'] = 3,
+		['FREEZE_MAY_DECREASE'] = 2,
+		['FREEZE_MAY_INCREASE'] = 1,
+		['FREEZE_NORMAL'] = 0,
+		['LOAD_APPEND'] = 8,
+		['LOAD_VALUES'] = 2,
+		['LOAD_VALUES_FREEZE'] = 3,
+		['PACKAGE'] = 'com.tgcpnnz',
+		['POINTER_EXECUTABLE'] = 2,
+		['POINTER_EXECUTABLE_WRITABLE'] = 1,
+		['POINTER_NO'] = 4,
+		['POINTER_READ_ONLY'] = 8,
+		['POINTER_WRITABLE'] = 16,
+		['PROT_EXEC'] = 4,
+		['PROT_NONE'] = 0,
+		['PROT_READ'] = 2,
+		['PROT_WRITE'] = 1,
+		['REGION_ANONYMOUS'] = 32,
+		['REGION_ASHMEM'] = 524288,
+		['REGION_BAD'] = 131072,
+		['REGION_CODE_APP'] = 16384,
+		['REGION_CODE_SYS'] = 32768,
+		['REGION_C_ALLOC'] = 4,
+		['REGION_C_BSS'] = 16,
+		['REGION_C_DATA'] = 8,
+		['REGION_C_HEAP'] = 1,
+		['REGION_JAVA'] = 65536,
+		['REGION_JAVA_HEAP'] = 2,
+		['REGION_OTHER'] = -2080896,
+		['REGION_PPSSPP'] = 262144,
+		['REGION_STACK'] = 64,
+		['REGION_VIDEO'] = 1048576,
+		['SAVE_AS_TEXT'] = 1,
+		['SIGN_EQUAL'] = 536870912,
+		['SIGN_FUZZY_EQUAL'] = 536870912,
+		['SIGN_FUZZY_GREATER'] = 67108864,
+		['SIGN_FUZZY_LESS'] = 134217728,
+		['SIGN_FUZZY_NOT_EQUAL'] = 268435456,
+		['SIGN_GREATER_OR_EQUAL'] = 67108864,
+		['SIGN_LESS_OR_EQUAL'] = 134217728,
+		['SIGN_NOT_EQUAL'] = 268435456,
+		['TAB_MEMORY_EDITOR'] = 3,
+		['TAB_SAVED_LIST'] = 2,
+		['TAB_SEARCH'] = 1,
+		['TAB_SETTINGS'] = 0,
+		['TYPE_AUTO'] = 127,
+		['TYPE_BYTE'] = 1,
+		['TYPE_DOUBLE'] = 64,
+		['TYPE_DWORD'] = 4,
+		['TYPE_FLOAT'] = 16,
+		['TYPE_QWORD'] = 32,
+		['TYPE_WORD'] = 2,
+		['TYPE_XOR'] = 8,
+		['VERSION'] = '101.1',
+		['VERSION_INT'] = 10101,
+		['addListItems'] = function (items) end, -- gg.addListItems(table items) -> true || string with error
+		['alert'] = function (text, positive, negative, neutral) end, -- gg.alert(string text [, string positive = 'ok' [, string negative = nil [, string neutral = nil]]]) -> int: 0 = cancel, 1 = positive, 2 = negative, 3 = neutral
+		['allocatePage'] = function (mode, address) end, -- gg.allocatePage([int mode = gg.PROT_READ | gg.PROT_EXEC [, long address = 0]) -> long || string with error
+		['bytes'] = function (text, encoding) end, -- gg.bytes(string text [, string encoding = 'UTF-8']) -> table
+		['choice'] = function (items, selected, message) end, -- gg.choice(table items [, string selected = nil [, string message = nil]]) -> string || nil
+		['clearList'] = function () end, -- gg.clearList() -> true || string with error
+		['clearResults'] = function () end, -- gg.clearResults() -> nil
+		['copyMemory'] = function (from, to, bytes) end, -- gg.copyMemory(long from, long to, int bytes) -> true || string with error
+		['copyText'] = function (text, fixLocale) end, -- gg.copyText(string text [, bool fixLocale = true]) -> nil
+		['disasm'] = function (type, address, opcode) end, -- gg.disasm(int type, long address, int opcode) -> string
+		['dumpMemory'] = function (from, to, dir, flags) end, -- gg.dumpMemory(long from, long to, string dir [, int flags = nil]) -> true || string with error
+		['editAll'] = function (value, type) end, -- gg.editAll(string value, int type) -> count of changed || string with error
+		['getActiveTab'] = function () end, -- gg.getActiveTab() -> int
+		['getFile'] = function () end, -- gg.getFile() -> string
+		['getLine'] = function () end, -- gg.getLine() -> int
+		['getListItems'] = function () end, -- gg.getListItems() -> table || string with error
+		['getLocale'] = function () end, -- gg.getLocale() -> string
+		['getRanges'] = function () end, -- gg.getRanges() -> int
+		['getRangesList'] = function (filter) end, -- gg.getRangesList([string filter = '']) -> table
+		['getResults'] = function (maxCount, skip, addressMin, addressMax, valueMin, valueMax, type, fractional, pointer) end, -- gg.getResults(int maxCount [, int skip = 0 [, long addressMin = nil [, long addressMax = nil [, string valueMin = nil [, string valueMax = nil [, int type = nil [, string fractional = nil [, int pointer = nil]]]]]]]]) -> table || string with error
+		['getResultsCount'] = function () end, -- gg.getResultsCount() -> long
+		['getSelectedElements'] = function () end, -- gg.getSelectedElements() -> table || string with error
+		['getSelectedListItems'] = function () end, -- gg.getSelectedListItems() -> table || string with error
+		['getSelectedResults'] = function () end, -- gg.getSelectedResults() -> table || string with error
+		['getSpeed'] = function () end, -- gg.getSpeed() -> double
+	获取安装包参数	['getTargetInfo'] = function () end, -- gg.getTargetInfo() -> table || nil
+--获取包名		['getTargetPackage'] = function () end, -- gg.getTargetPackage() -> string || nil
+		['getValues'] = function (values) end, -- gg.getValues(table values) -> table || string with error
+		['getValuesRange'] = function (values) end, -- gg.getValuesRange(table values) -> table || string with error
+		['gotoAddress'] = function (address) end, -- gg.gotoAddress(long address) -> nil
+		['hideUiButton'] = function () end, -- gg.hideUiButton() -> nil
+		['isClickedUiButton'] = function () end, -- gg.isClickedUiButton() -> bool || nil
+		['isPackageInstalled'] = function (pkg) end, -- gg.isPackageInstalled(string pkg) -> bool
+		['isProcessPaused'] = function () end, -- gg.isProcessPaused() -> bool
+		['isVisible'] = function () end, -- gg.isVisible() -> bool
+		['loadList'] = function (file, flags) end, -- gg.loadList(string file [, int flags = 0]) -> true || string with error
+		['loadResults'] = function (results) end, -- gg.loadResults(table results) -> true || string with error
+		['makeRequest'] = function (url, headers, data) end, -- gg.makeRequest(string url [, table headers = {} [, string data = nil]]) -> table || string
+		['multiChoice'] = function (items, selection, message) end, -- gg.multiChoice(table items [, table selection = {} [, string message = nil]]) -> table || nil
+		['numberFromLocale'] = function (num) end, -- gg.numberFromLocale(string num) -> string
+		['numberToLocale'] = function (num) end, -- gg.numberToLocale(string num) -> string
+		['processKill'] = function () end, -- gg.processKill() -> bool
+		['processPause'] = function () end, -- gg.processPause() -> bool
+		['processResume'] = function () end, -- gg.processResume() -> bool
+		['processToggle'] = function () end, -- gg.processToggle() -> bool
+		['prompt'] = function (prompts, defaults, types) end, -- gg.prompt(table prompts [, table defaults = {} [, table types = {} ]]) -> nil || table with keys from prompts and values from inputs
+		['refineAddress'] = function (text, mask, type, sign, memoryFrom, memoryTo, limit) end, -- gg.refineAddress(string text [, long mask = -1 [, int type = gg.TYPE_AUTO [, int sign = gg.SIGN_EQUAL [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]]]) -> true || string with error
+		['refineNumber'] = function (text, type, encrypted, sign, memoryFrom, memoryTo, limit) end, -- gg.refineNumber(string text [, int type = gg.TYPE_AUTO [, bool encrypted = false [, int sign = gg.SIGN_EQUAL [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]]]) -> true || string with error
+		['removeListItems'] = function (items) end, -- gg.removeListItems(table items) -> true || string with error
+		['removeResults'] = function (results) end, -- gg.removeResults(table results) -> true || string with error
+		['require'] = function (version, build) end, -- gg.require([string version = nil [, int build = 0]]) -> nil
+		['saveList'] = function (file, flags) end, -- gg.saveList(string file [, int flags = 0]) -> true || string with error
+		['saveVariable'] = function (variable, filename) end, -- gg.saveVariable(mixed variable, string filename) -> true || string with error
+		['searchAddress'] = function (text, mask, type, sign, memoryFrom, memoryTo, limit) end, -- gg.searchAddress(string text [, long mask = -1 [, int type = gg.TYPE_AUTO [, int sign = gg.SIGN_EQUAL [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]]]) -> true || string with error
+		['searchFuzzy'] = function (difference, sign, type, memoryFrom, memoryTo, limit) end, -- gg.searchFuzzy([string difference = '0' [, int sign = gg.SIGN_FUZZY_EQUAL [, int type = gg.TYPE_AUTO [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]]]) -> true || string with error
+		['searchNumber'] = function (text, type, encrypted, sign, memoryFrom, memoryTo, limit) end, -- gg.searchNumber(string text [, int type = gg.TYPE_AUTO [, bool encrypted = false [, int sign = gg.SIGN_EQUAL [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]]]) -> true || string with error
+		['searchPointer'] = function (maxOffset, memoryFrom, memoryTo, limit) end, -- gg.searchPointer(int maxOffset [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]) -> true || string with error
+		['setRanges'] = function (ranges) end, -- gg.setRanges(int ranges) -> nil
+		['setSpeed'] = function (speed) end, -- gg.setSpeed(double speed) -> true || string with error
+		['setValues'] = function (values) end, -- gg.setValues(table values) -> true || string with error
+		['setVisible'] = function (visible) end, -- gg.setVisible(bool visible) -> nil
+		['showUiButton'] = function () end, -- gg.showUiButton() -> nil
+		['skipRestoreState'] = function () end, -- gg.skipRestoreState() -> nil
+		['sleep'] = function (milliseconds) end, -- gg.sleep(int milliseconds) -> nil
+		['startFuzzy'] = function (type, memoryFrom, memoryTo, limit) end, -- gg.startFuzzy([int type = gg.TYPE_AUTO [, long memoryFrom = 0 [, long memoryTo = -1 [, long limit = 0]]]]) -> true || string with error
+		['timeJump'] = function (time) end, -- gg.timeJump(string time) -> true || string with error
+		['toast'] = function (text, fast) end, -- gg.toast(string text [, bool fast = false]) -> nil
+		['unrandomizer'] = function (qword, qincr, double_, dincr) end, -- gg.unrandomizer([long qword = nil [, long qincr = nil [, double double_ = nil [, double dincr = nil]]]]) -> true || string with error
+	},
+	['io'] = { -- table(ea7ae1f)
+		['close'] = function: close,
+		['flush'] = function: flush,
+		['input'] = function: input,
+		['lines'] = function: lines,
+		['open'] = function: open,
+		['output'] = function: output,
+		['popen'] = function: popen,
+		['read'] = function: read,
+		['stderr'] = file (50276149),
+		['stdout'] = file (258786668),
+		['tmpfile'] = function: tmpfile,
+		['type'] = function: type,
+		['write'] = function: write,
+	},
+	['ipairs'] = function: ipairs,
+	['load'] = function: load,
+	['loadfile'] = function: loadfile,
+	['math'] = { -- table(f0801b1)
+		-- *** RECURSION ***
+	},
+	['next'] = function: next,
+	['os'] = { -- table(7dccdbe)
+		['clock'] = function: clock,
+		['date'] = function: date,
+		['difftime'] = function: difftime,
+		['execute'] = function: execute,
+		['exit'] = function: gg.exit,
+		['getenv'] = function: getenv,
+		['remove'] = function: remove,
+		['rename'] = function: rename,
+		['setlocale'] = function: setlocale,
+		['time'] = function: time,
+		['tmpname'] = function: tmpname,
+	},
+	['package'] = { -- table(c9407ca)
+		['config'] = '/
+;
+?
+!
+-
+',
+		['loaded'] = { -- table(5a30d3b)
+			['bit32'] = { -- table(b16cc58)
+				['arshift'] = function: arshift,
+				['band'] = function: band,
+				['bnot'] = function: bnot,
+				['bor'] = function: bor,
+				['btest'] = function: btest,
+				['bxor'] = function: bxor,
+				['extract'] = function: extract,
+				['lrotate'] = function: lrotate,
+				['lshift'] = function: lshift,
+				['replace'] = function: replace,
+				['rrotate'] = function: rrotate,
+				['rshift'] = function: rshift,
+			},
+			['debug'] = { -- table(e439540)
+				-- *** RECURSION ***
+			},
+			['gg'] = { -- table(9c03c79)
+				-- *** RECURSION ***
+			},
+			['io'] = { -- table(ea7ae1f)
+				-- *** RECURSION ***
+			},
+			['math'] = { -- table(f0801b1)
+				['abs'] = function: math.abs,
+				['acos'] = function: math.acos,
+				['asin'] = function: math.asin,
+				['atan'] = function: math.atan2,
+				['atan2'] = function: math.atan2,
+				['ceil'] = function: math.ceil,
+				['cos'] = function: math.cos,
+				['cosh'] = function: math.cosh,
+				['deg'] = function: math.deg,
+				['exp'] = function: math.exp,
+				['floor'] = function: math.floor,
+				['fmod'] = function: math.fmod,
+				['frexp'] = function: math.frexp,
+				['huge'] = inf,
+				['ldexp'] = function: math.ldexp,
+				['log'] = function: math.log,
+				['max'] = function: math.max,
+				['maxinteger'] = 9223372036854775807,
+				['min'] = function: math.min,
+				['mininteger'] = -9223372036854775808,
+				['modf'] = function: math.modf,
+				['pi'] = 3.141592653589793,
+				['pow'] = function: math.pow,
+				['rad'] = function: math.rad,
+				['random'] = function: math.random,
+				['randomseed'] = function: math.randomseed,
+				['sin'] = function: math.sin,
+				['sinh'] = function: math.sinh,
+				['sqrt'] = function: math.sqrt,
+				['tan'] = function: math.tan,
+				['tanh'] = function: math.tanh,
+				['tointeger'] = function: math.tointeger,
+				['type'] = function: math.type,
+				['ult'] = function: math.ult,
+			},
+			['os'] = { -- table(7dccdbe)
+				-- *** RECURSION ***
+			},
+			['package'] = { -- table(c9407ca)
+				-- *** RECURSION ***
+			},
+			['string'] = { -- table(32b4217)
+				['byte'] = function: string.byte,
+				['char'] = function: string.char,
+				['dump'] = function: string.dump,
+				['find'] = function: string.find,
+				['format'] = function: gg.format,
+				['gmatch'] = function: string.gmatch,
+				['gsub'] = function: string.gsub,
+				['len'] = function: string.len,
+				['lower'] = function: string.lower,
+				['match'] = function: string.match,
+				['pack'] = function: string.pack,
+				['packsize'] = function: string.packsize,
+				['rep'] = function: string.rep,
+				['reverse'] = function: string.reverse,
+				['sub'] = function: string.sub,
+				['unpack'] = function: string.unpack,
+				['upper'] = function: string.upper,
+			},
+			['table'] = { -- table(26348c3)
+				-- *** RECURSION ***
+			},
+			['utf8'] = { -- table(6d2d696)
+				['char'] = function: utf8.char,
+				['charpattern'] = '[ -�-�][�-�]*',
+				['codepoint'] = function: utf8.codepoint,
+				['codes'] = function: utf8.codes,
+				['len'] = function: utf8.len,
+				['offset'] = function: utf8.offset,
+			},
+		},
+		['loadlib'] = function: package.loadlib,
+		['path'] = '?.lua',
+		['preload'] = { -- table(c585604)
+		},
+		['searchers'] = { -- table(6ea07ed)
+			[1] = function: package.preload_searcher,
+			[2] = function: package.lua_searcher,
+			[3] = function: package.java_searcher,
+		},
+		['searchpath'] = function: package.searchpath,
+	},
+	['pairs'] = function: pairs,
+	['pcall'] = function: pcall,
+	['print'] = function: print,
+	['rawequal'] = function: rawequal,
+	['rawget'] = function: rawget,
+	['rawlen'] = function: rawlen,
+	['rawset'] = function: rawset,
+	['require'] = function: package.require,
+	['select'] = function: select,
+	['setmetatable'] = function: setmetatable,
+	['string'] = { -- table(32b4217)
+		-- *** RECURSION ***
+	},
+	['table'] = { -- table(26348c3)
+		['concat'] = function: table.concat,
+		['insert'] = function: table.insert,
+		['move'] = function: table.move,
+		['pack'] = function: table.pack,
+		['remove'] = function: table.remove,
+		['sort'] = function: table.sort,
+		['unpack'] = function: table.unpack,
+	},
+	['tonumber'] = function: tonumber,
+	['tostring'] = function: tostring,
+	['type'] = function: type,
+	['utf8'] = { -- table(6d2d696)
+		-- *** RECURSION ***
+	},
+	['xpcall'] = function: xpcall,
+}
+
+
+
+--时间：2022.3.7
+--#By小鳄鱼学习笔记
+By小鳄鱼:io库:
+{ -- table(5bbe668)
+io.close 结束
+
+io.flush 把缓冲区的内容强制写出
+
+io. input 输入
+
+io.lines 打开指定的文件filename为读模式并返回一个迭代函数,每次调用将获得文件中的一行内容,当到文件尾时，将返回nil,并自动关闭文件
+
+io.open 按指定的模式打开一个文件，成功则返回文件句柄，失败则返回nil+错误信息
+	
+io. output 相当于io.input，但操作在默认输出文件上
+
+io.popen 开始程序prog于额外的进程,并返回用于prog的文件句柄(并不支持所有的系统平台)
+
+io.read 相当于io.input():read
+
+io.stderr 标准错误
+
+io.stdout 标准输入
+	
+io.tmpfile 返回一个临时文件的句柄，以可写（实际上也可读）的方式打开并且在程序结束时自动删除。
+	
+io.type lua内置的函数，用来获取类型
+
+io.write 按指定的参数格式输出文件内容，参数必须为字符或数字，若要输出其它值，则需通过tostring或string.format进行转换
+	
+}
+By小鳄鱼:os库:
+{ -- table(2da6f67)
+os.clock 返回一个程序使用CPU时间的一个近似值。
+
+os.date 把时间戳转化成可显示的时间字符串..........不带任何参数, 返回包含日期和时间的字符串
+dump(os.date(“*t”,0)，“--->”)      -- 格式化成表的形式显示
+
+os.difftine 返回以秒计算的时刻t1到 t2 的差值。 在Windows，和其它一些系统中，这个值就等于 t2-t1。
+
+os.execute 这个函数相当于C语言中的system()，我们可以看到这个函数有一个缺省的参数command，这个函数就是解析command再来通过的系统来调用解析的结果，它会返回一个依赖于操作系统的状态码。当参数缺省时，如果操作系统可以调用解析参数则返回非0的数，否则返回0。
+
+os.exit 相当于C的exit函数,终止主程序,code为返回值。
+
+os.getenv 返回当前进程的环境变量varname的值,若变量没有定义时返回nil
+	
+os.remove 删除文件或一个空目录，若函数调用失败则返加nil加上错误信息。
+
+os.rename 更改一个文件或目录名,若函数调用失败则返回nil加上错误信息。
+
+os.setlocale 
+
+os.time 不带任何参数, 返回的是当前系统时间转化为秒数的结果　
+
+os.tmpname 返回一个临时的文件名，这个文件使用之前必须被创建打开，并且在不需要的时候手动删除。
+	
+By小鳄鱼:string库:
+{ -- table(59d0114)
+string.byte 函数返回字符s[i], s[i+1], ···, s[j]的内部数字编码(ASCII码)，其中参数i的默认值是1，而参数j的默认值是i。需要注意的是该函数在返回的数字编码在跨平台方面不一定是可移植的。
+
+string.char 申明一个字符型变量的语句
+
+string.dump dump()为输出堆栈方法,可以方便的打印表table结构和对象内容,
+
+string.find 在Hello lua users 中查找lua起始字符位置s和结束字符位置e。
+
+string.format lua中可以用".."连接字符串，可以起到一部分格式化字符串的作用，但是如果字符串较长或者有特殊的格式转换操作(如十六进制转换)，用".."就会很繁琐且可读性差。用string.format()就是一个很好的解决方案。 函数定义string.format() 第一个参数为字符串格式，后面的参数可以任意多个，用于填充第一个参数中的格式控制符，最后返回完整的格式化后的字符串。
+
+string.gmatch 返回一个迭代器函数，每一次调用这个函数，返回一个在字符串 s 找到的下一个符合 pattern 描述的子串。如果参数 pattern 描述的字符串没有找到，迭代函数返回 nil。
+
+string.gsub 有三个参数：目标串，模式串，替换串。基本作用是用来查找匹配模式的串，并将使用替换串其替换掉。
+
+string.len 返回所给字符串的长度，如果字符串中包含'\0'，也会被统计为一个字符
+
+string.lower 接收一个字符串，然后返回一个将字符串中大写字母转化为小写字母的字符串副本，除此之外其他字符都不会被改变，大写字母的定义依赖于当前的本地设置
+
+string.match 匹配
+	
+string.pack 把一些数据打包成字符串的形式，以便发送
+	
+string.packsize 包装规格
+
+string.rep 返回字符串s串联n次的所组成的字符串，参数s表示基础字符串，参数n表示赋值的次数。
+
+string.reverse 返回字符串s反序字符串
+
+string.sub 返回字符串s从第i个字符到第j个字符的子串，参数i和参数j均可以为负数，如果省略参数j，默认为-1，也就是子串截止到原串的最后。一些特殊的使用方法，比如我们可以调用函数string.sub(s, 1, j)是返回字符串长度为j的前缀，调用函数string.sub(s, -i)返回子串长度为i的原串的后缀
+	
+string.unpack 接受一个数组作为参数,并从下标1开始返回该数组的所有元素. a={1,2,3} print(unpack(a))可以输出1,2,3数值.
+	
+string.upper 接收一个字符串，然后返回一个将字符串中大写字母转化为小写字母的字符串副本，除此之外其他字符都不会被改变，大写字母的定义依赖于当前的本地设置。
+
+By小鳄鱼:table库:
+{ -- table(3a5bdbd)
+table.concat 返回表中的特定项连接后的数据，要求所连接的数据必须为数字或者字符串，级返回table[i]..sep..table[i+1] ··· sep..table[j]，其中参数sep表示连接符，默认为空字符串""，参数i默认为1，参数j默认是table的length，如果参数i大于j的话，返回空字符串""
+
+table.insert 返回一个迭代型整数遍历表
+
+table.move移动
+
+table.pack 把数据装入一个二进制字符串
+
+table.remove 删除
+
+table.sort 对一个数组进行排序，还可以指定一个可选的次序函数
+
+table.unpack 接受一个数组(table)作为参数，并默认从下标1开始返回数组的所有元素
+
+By小鳄鱼:utf8库:
+{ -- table(a8f8fb2)
+utf8.char utf8字符串
+
+utf8.charpattern 字符模式
+
+utf8.codepoint 代码点
+
+utf8.codes 代码
+
+utf8.len 返回所给字符串的长度，如果字符串中包含'\0'，也会被统计为一个字符。
+
+utf8.offset 引用函数，表示引用某一个单元格或者区域
+	
+By小鳄鱼:debug库:
+{ -- table(2949b03)
+debug.debug 调试
+	
+debug.gethook 
+
+debug.getinfo 获取函数调用
+
+debug.getlocal 混淆
+	
+debug.getmetatable ：如果对象没有一个元表，则函数返回nil，否则函数会查询原表中是否有"__metatable"字段，如果有返回其关联值，如果没有则会返回所给对象的元表。
+
+debug.getregistry 
+
+debug.getupvalue 
+	
+debug.getuservalue 3
+
+debug.sethook 
+
+debug.setlocal 
+	
+debug.setmetatable 设置当前表的元表或者用户数据对象
+
+debug.setupvalue 
+
+debug.setuservalue 
+
+debug.traceback 
+
+debug.upvalueid 
+
+debug.upvaluejoin 
+
+By小鳄鱼:bit32库:
+{ -- table(7d31a80)
+bit32.arshift 移动，改变，字型转换
+
+bit32.band(w1,,,) 返回w的位与
+
+bit32.bnot(a) 返回一个a的补充
+
+bit32.bor(w1,,,) 返回w的位或
+	
+bit32.btest 
+	
+bit32.bxor(w1,,,) 返回w位异或
+
+bit32.extract 提取，拿出
+	
+bit32.lrotate 
+	
+bit32.lshift(a,b) 返回a向左偏移到b位
+
+bit32.replace 代替，更换，取代
+
+bit32.rrotate 
+
+bit32.rshift(a,b) 返回a逻辑右偏移到b位
+
+}
+By小鳄鱼:math库:
+{ -- table(5f578b9)
+math.abs 取绝对值
+
+math.acoa 反余弦函数
+	
+math.asin 反正弦函数
+
+math.atan 反正切函数
+
+math.atan2 x/y的反正切值
+
+math.ceil 不小于x的最大整数
+
+math.cos 余弦函数
+	、
+math.cosh 双曲线余弦函数
+
+math.deg 弧度转角度
+
+math.exp 计算以e为底x次方值
+	
+math.floor 不大于x的最大整数
+
+math.fmod 取模运算
+
+math.frexp 把双精度数val分解为数字部分（尾数）和
+以2为底的指数n，即val=x*2n
+
+math.huge 
+
+math.ldexp 计算value * 2的n次方
+
+math.log 计算一个数的自然对数
+
+math.max 取得参数中最大值
+
+math.maxinteger
+
+math.min 取得参数中最小值
+
+math.mininteger 
+
+math.modf 把数分为整数和小数
+
+math.pi 圆周率
+	
+math.pow 得到x的y平方
+	
+math.rad 角度转弧数
+
+math.random 获取随机数
+
+math.randomseed 获取随机数种子
+
+math.sin 正弦函数
+
+math.sinh 双曲线正弦函数
+
+math.sqrt 开平方函数
+	
+math.tan 正切函数
+
+math.tanh 双曲线正切函数
+
+math.toointrger 
+
+math.type 
+
+math.ult 
+
+By小鳄鱼:gg库: 
+{ -- table(c62f4fe)
+gg.ANDROID_SDK_INT 
+
+gg.ASM_ARM 
+
+gg.ASM_ARM64 
+
+gg.ASM_THUMB 
+
+gg.BUILD 安装包版本
+
+gg.CACHE_DIR 
+
+gg.DUMP_SKIP_SYSTEM_LIBS 转储跳过系统库
+	
+gg.EXT_CACHE_DIR 缓存目录
+
+gg.EXT_FILES_DIR 文件目录
+
+gg.EXT_STORAGE 外部存储
+	
+gg.FILES_DIR 文件夹目录
+
+gg.FREEZE_IN_RANGE 冻结在这个范围里
+
+gg.FREEZE_MAY_DECREASE 冻结可以减少的值
+
+gg.FREEZE_MAY_INCREASE 冻结可以增加的值
+
+gg.FREEZE_NORMAL 冻结正常，常态的值
+
+gg.LOAD_APPEND 加载附加
+
+gg.LOAD_VALUES 加载_值
+	
+gg.LOAD_VALUES_FREEZE 加载\u值\u冻结
+
+gg.PACKAGE 包裹
+
+gg.POINTER_EXECUTABLE 指针\u可执行文件
+
+gg.POINTER_EXECUTABLE_WRITABLE 指针\u可执行\u可写
+
+gg.POINTER_NO 不
+
+gg.POINTER_READ_ONLY 指针只读
+
+gg.POINTER_WRITABLE 指针可写
+
+gg.PROT_EXEC 首席执行官
+
+gg.PROT_NONE 无保护
+
+gg.PROT_READ 读和写这个内存段中的页面
+
+gg.PROT_WRITE READ和PROT WRITE分别表示可以读和写这个内存段中的页面。
+
+gg.REGION_ANONYMOUS   As内存
+
+gg.REGION_BAD B内存
+
+gg.REGION_CODE_APP Xa内存
+
+gg.REGION_CODE_SYS Xs内存
+
+gg.REGION_C_ALLOC ca内存
+
+gg.REGION_C_BSS cb内存
+
+gg.REGION_C_DATA cd内存
+
+gg.REGION_C_HEAP ch内存
+
+gg.REGION_JAVA J内存
+
+gg.REGION_JAVA_HEAP jh内存
+
+gg.REGION_OTHER O内存
+
+gg.REGION_PPSSPP ps内存
+	
+gg.REGION_STACK S内存
+
+gg.REGION_VIDEO V内存
+
+gg.SAVE_AS_TEXT 保存as文件
+
+gg.SIGN_EQUAL 标记，标志相同
+
+gg.SIGN_FUZZY_EQUAL 标记未知相同
+
+gg.SIGN_FUZZY_GREATER 符号_模糊_更大
+
+gg.SIGN_FUZZY_NOT_EQUAL 符号不相等
+
+gg.SIGN_GREATER_OR_EQUAL 符号大于或等于
+
+gg.SIGN_LESS_OR_EQUAL 签署_LESS _或_EQUA
+
+gg.SIGN_NOT_EQUAL 符号不相等
+
+gg.TAB_MEMORY_EDITOR 选项卡_内存_编辑器
+
+gg.TAB_SAVED_LIST 选项卡\u已保存\u列表
+
+gg.TAB_SEARCH TAB_搜索
+
+gg.TAB_SETTINGS TAB_设置
+
+gg.TYPE_AUTO A类（数据类型） 类型自动
+
+gg.TYPE_BYTE B类（数据类型） 类型字节
+
+gg.TYPE_DOUBLE E类（数据类型） 类型DOUBLE
+
+gg.TYPE_DWORD D类（数据类型） 类型DWORD
+
+gg.TYPE_FLOAT F类（数据类型）
+
+gg.TYPE_QWORD Q类（数据类型）
+
+gg.TYPE_WORD W类（数据类型）
+
+gg.TYPE_XOR X类（数据类型）
+
+gg.VERSION GG版本
+
+gg.VERSION_INT 版本
+
+gg.addListItems 增加文本列表
+
+gg.alert 弹出提示窗口
+
+gg.allocatePage 分配页面
+
+gg.bytes 字节
+
+gg.choice 弹出单选列表窗口
+
+gg.clearList 清除列表
+
+gg.clearResults 清除搜索结果
+
+gg.copyMemory 复制记忆
+
+gg.copyText 复制信息
+
+gg.disasm 分裂
+
+gg.dumpMemory （废料回收机）英译
+
+gg.editAll 修改搜索结果
+
+gg.getActiveTab 获取活动
+
+gg.getFile 获取当前脚步所在目录
+
+gg.getLine 读取行数
+
+gg.getListItems 
+
+gg.getLocale 获取地值
+
+gg.getRanges 获取内存区域内的
+
+gg.getRangesList 获取内存区域列表
+
+gg.getResults 获取搜索结果
+
+gg.getResultsCount 获取搜索结果数量
+
+gg.getSelectedElements 
+
+gg.getSelectedListItems 
+
+gg.getSelectedResults 
+
+gg.getSpeed 获取加速
+
+gg.getTargetInfo 获取目标信息
+
+gg.getTargetPackage 获取进程包名GG内存
+
+gg.getValues 获取值
+
+gg.getValuesRange 获取值的范围
+
+gg.gotoAddress 转到内存地址
+
+gg.hideUiButton UI是否可见
+
+gg.isClickedUiButton  伊斯克利克杜布顿
+
+gg.isPackageInstalled 检查包名安装
+
+gg.isProcessPaused 进程是否暂停
+
+gg.isVisible 判断GG界面是否可见
+
+gg.loadList 加载列表
+
+gg.loadResults 加载结果
+
+gg.makeRequest 获取网站
+
+gg.multiChoice 弹出多选列表窗口
+
+gg.numberFromLocale 
+
+gg.numberToLocale 数字地点
+
+gg.processKill 结束当前选定应用
+
+gg.processPause 暂停进程
+
+gg.processResume 恢复进程
+
+gg.processToggle 切换进程
+
+gg.prompt 弹出带有控件的提示窗口
+
+gg.refineAddress 地址搜索
+
+gg.refineNumber 精炼号
+
+gg.removeListItems 删除列表中的项目
+
+gg.removeResults 移除列表中的结果
+
+gg.require 要求
+
+gg.saveList 保存列表
+
+gg.saveVariable 保存变量
+
+gg.searchAddress 搜索地址
+
+gg.searchFuzzy 未知搜索
+
+gg.searchNumber 指定数值搜索
+
+gg.searchPointer 搜索指针
+
+gg.setRanges 设置搜索内存
+
+gg.setSpeed 设置速度
+
+gg.setValues 设置值
+
+gg.setVisible 设置GG界面是否可见
+
+gg.showUiButton 显示按钮
+
+gg.skipRestoreState 跳跃恢复声明
+	
+gg.sleep 休眠
+
+gg.startFuzzy 开始模糊
+	
+gg.timeJump 时空跳跃
+
+gg.toast 屏幕下方弹出提示条（自动消失）
+	
+gg.unrandomizer取消随机
+	
+	
+	
+	--gg.alert("弹窗","选项1","选项2","选项3")
+--print("打印")
+gg.choice({"选项","选项2"},nil,"顶置内容")
+gg.alert("点击了选项")
+
+
+
+
+--[[
+我们来认识一下两个新函数 循环
+循环有3个循环函数 我们今天来认识一下其中的两个
+for 与 while
+首先两个的用法
+for
+for 变量=数,循环次数,步进 do
+或者
+for 变量,变量 in ipairs()\pairs() do
+while
+while 循环条件 do
+我来举几个例子说一下两个函数的区别和用法
+]]
+
+--for
+--1
+for 1,10,1 do
+print("hhh")
+end
+--2
+for i=1,10,1 do
+print("循环第"..i.."次")
+end
+--for i=1,10 do--这个和第二个并无区别
+--3
+a={3,6,3,6,3,6,3,6,3,6}
+for i,v in ipairs(a) do
+print(i,v)
+end
+
+--while
+--1
+while true do
+print"hh"
+end
+--2
+a=1
+while a<=10 do
+a=a+1
+print(a)
+end
+
+
+
+nil	这个最简单，只有值nil属于该类，表示一个无效值（在条件表达式中相当于false）。
+boolean	包含两个值：false和true。
+number	表示双精度类型的实浮点数
+string	字符串由一对双引号或单引号来表示
+function	由 C 或 Lua 编写的函数
+userdata	表示任意存储在变量中的C数据结构
+thread	表示执行的独立线路，用于执行协同程序
+table	Lua 中的表（table）其实是一个"关联数组"（associative arrays），数组的索引可以是数字、字符串或表类型。在 Lua 里，table 的创建是通过"构造表达式"来完成，最简单构造表达式是{}，用来创建一个空表。
+
+
+
+--{}这个我自己称为表 当然你们也可以带入自己的看法
+a={"1","2","3","4","5","6"}--表里面的内容是1-6
+--假设我们要取出表里面的内容怎么写呢？
+--写法如下
+print(a[1])--这里[1]被称为下标为1的数
+--当然对于初学者可以这样理解
+--也就是a这个表里面的第一个内容
+--那么如果是a[2]就是第二个内容 内容与内容之间用,或者;相隔
+--这样的话我们就可以用表写一个菜单 如下
+--写法1
+gg.choice(a,nil,"白")
+--写法2
+gg.choice({a[1],a[2],a[3],a[4],a[5],a[6]},nil,"白")
+
+
+
+BY.苏苏
+1. function：函数，功能
+2. gg.alert  弹出提示窗口
+3. gg.toast 屏幕下方弹出提示条( 会自动消失 )
+3. gg.prompt 弹出带有控件的提示窗口
+4. gg.choice 弹出单选列表窗口
+5. gg.clearResults 清除搜索结果
+6. gg.editAll 修改搜索结果
+7. gg.getFile 获取当前脚本所在目录
+8. gg.getResults 获取搜索结果
+9. gg.getResultCount 获取搜索结果数量
+10. gg.setRanges 设置搜索内存
+11. gg.isVisible 判断GG界面是否可见
+12. gg.multiChoice 弹出多选列表窗口
+13. gg.processKill 结束当前选定应用
+14. gg.searchNumber 搜索数据 (重要)
+15. gg.setVisible 设置GG界面是否可见
+16. getline()读取行数
+17. getlocale0荻取地值
+18. getRanges()获取内存区域内的
+19. getRangeslist)荻取内存区域列表
+20. getResultCount)荻取结果计数
+21. getResultso :荻取结果加载
+22. getSpeedo荻取加速
+23. getTargetInfo荻取目标信息
+24. getTargetPackage0荻取迸程包名GG内存
+函数没有用的话，加一个()试试！！！
+内存范围
+Jh内存:	['REGION_JAVA_HEAP'] = 2,
+Ch内存:	['REGION_C_HEAP'] = 1,
+Ca内存:	['REGION_C_ALLOC'] = 4,
+Cd内存:	['REGION_C_DATA'] = 8,
+Cb内存:	['REGION_C_BSS'] = 16,
+Ps内存:['REGION_PPSSPP'] = 262144,
+A内存:	['REGION_ANONYMOUS'] = 32,
+J内存:	['REGION_JAVA'] = 65536,
+S内存:	['REGION_STACK'] = 64,
+As内存:	['REGION_ASHMEM'] = 524288 </div>
+         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js">
+  </script>
+  <script src="https://myhkw.cn/player/js/player.js" id="myhk" key="demo" m="1">
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
